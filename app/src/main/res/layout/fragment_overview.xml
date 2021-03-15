@@ -15,20 +15,10 @@
         android:layout_height="match_parent"
         tools:context="com.example.stormotiontest.MainActivity">
 
-        <!--<androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:background="#50BEC9"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"/>-->
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/photos"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="#F2F2F2"
             android:clipToPadding="false"
             android:padding="6dp"
