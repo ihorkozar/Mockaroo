@@ -21,8 +21,6 @@ private val retrofit = Retrofit.Builder()
 interface ApiService {
     @GET("test.json?key=6e40d570")
     suspend fun getProperties(): List<Property>
-    /*@GET("realestate")
-    suspend fun getProperties(@Query("q") type: String): List<Property>*/
 }
 
 object Api{

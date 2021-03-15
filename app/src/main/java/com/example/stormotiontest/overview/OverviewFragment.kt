@@ -27,7 +27,6 @@ class OverviewFragment: Fragment() {
         binding.photos.adapter = PhotoAdapter(PhotoAdapter.OnClickListener{
             viewModel.displayPropertyDetails(it)
         })
-        //binding.toolbar.title = "LIST"
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if (null != it){
                 this.findNavController().navigate(OverviewFragmentDirections.actionShowDetail(it))
