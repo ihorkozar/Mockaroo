@@ -24,6 +24,9 @@
             android:name="selectedProperty"
             app:argType="com.example.stormotiontest.network.Property"
             />
+        <action
+            android:id="@+id/action_detailFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
     </fragment>
 
 </navigation>
