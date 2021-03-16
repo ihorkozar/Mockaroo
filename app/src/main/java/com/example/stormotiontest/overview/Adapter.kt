@@ -8,15 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.stormotiontest.databinding.ViewItemBinding
 import com.example.stormotiontest.network.Property
 
-class PhotoAdapter(val onClickListener: OnClickListener):
-ListAdapter<Property, PhotoAdapter.PropertyViewHolder>(DiffCallback){
+class Adapter(val onClickListener: OnClickListener) :
+    ListAdapter<Property, Adapter.PropertyViewHolder>(DiffCallback) {
 
-    class PropertyViewHolder(private var binding: ViewItemBinding):
+    class PropertyViewHolder(private var binding: ViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(property: Property) {
             binding.property = property
             binding.executePendingBindings()
         }
+    }
+
+    class AdViewHolder(private var binding: ViewItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
     }
 
     companion object DiffCallback : DiffUtil.ItemCallback<Property>() {
@@ -29,8 +33,10 @@ ListAdapter<Property, PhotoAdapter.PropertyViewHolder>(DiffCallback){
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup,
-                                    viewType: Int): PropertyViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): PropertyViewHolder {
         return PropertyViewHolder(ViewItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
@@ -43,6 +49,6 @@ ListAdapter<Property, PhotoAdapter.PropertyViewHolder>(DiffCallback){
     }
 
     class OnClickListener(val clickListener: (property: Property) -> Unit) {
-        fun onClick(property:Property) = clickListener(property)
+        fun onClick(property: Property) = clickListener(property)
     }
 }

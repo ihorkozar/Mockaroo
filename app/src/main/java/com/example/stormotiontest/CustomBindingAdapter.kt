@@ -3,7 +3,6 @@ package com.example.stormotiontest
 import android.net.Uri
 import android.view.View
 import android.widget.ImageView
-import android.widget.MediaController
 import android.widget.VideoView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
@@ -12,11 +11,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.stormotiontest.network.Property
 import com.example.stormotiontest.overview.ApiStatus
-import com.example.stormotiontest.overview.PhotoAdapter
+import com.example.stormotiontest.overview.Adapter
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Property>?) {
-    val adapter = recyclerView.adapter as PhotoAdapter
+    val adapter = recyclerView.adapter as Adapter
     adapter.submitList(data)
 }
 
