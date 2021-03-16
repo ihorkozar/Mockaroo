@@ -1,7 +1,10 @@
 package com.example.stormotiontest
 
+import android.net.Uri
 import android.view.View
 import android.widget.ImageView
+import android.widget.MediaController
+import android.widget.VideoView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +18,16 @@ import com.example.stormotiontest.overview.PhotoAdapter
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Property>?) {
     val adapter = recyclerView.adapter as PhotoAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("videoUrl")
+fun bindVideo(videoView: VideoView, videoUrl: String?) {
+    videoUrl?.let {
+        val onlineUri = Uri.parse(videoUrl)
+        videoView.setVideoURI(onlineUri)
+        videoView.requestFocus()
+        videoView.start()
+    }
 }
 
 @BindingAdapter("imageUrl")
